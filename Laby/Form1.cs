@@ -36,7 +36,7 @@ namespace Laby
         private void Connect_Click(object sender, EventArgs e)
         {
             string host = Adress.Text;
-            int p = Convert.ToInt16(port.Value);
+            int p = Convert.ToInt32(port.Value);
             try
             {
                 TcpClient client = new TcpClient(host, p);
@@ -44,7 +44,8 @@ namespace Laby
                 client.Close();
             }catch (Exception ex)
             {
-                info_feed.Items.Add("Couldn't connect. Error: " + ex.ToString()); 
+                info_feed.Items.Add("Couldn't connect. Error: " + ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
            
         }
