@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Sockets;
 
 namespace Laby
 {
@@ -30,6 +31,22 @@ namespace Laby
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Connect_Click(object sender, EventArgs e)
+        {
+            string host = Adress.Text;
+            int p = Convert.ToInt16(port.Value);
+            try
+            {
+                TcpClient client = new TcpClient(host, p);
+                info_feed.Items.Add("Connection has been established with " + host + " on a port " + p);
+                client.Close();
+            }catch (Exception ex)
+            {
+                info_feed.Items.Add("Couldn't connect. Error: " + ex.ToString()); 
+            }
+           
         }
     }
 }

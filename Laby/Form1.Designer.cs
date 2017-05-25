@@ -28,46 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.Adress = new System.Windows.Forms.TextBox();
+            this.port = new System.Windows.Forms.NumericUpDown();
+            this.Connect = new System.Windows.Forms.Button();
+            this.info_feed = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.port)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Adress
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(365, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.Adress.Location = new System.Drawing.Point(28, 31);
+            this.Adress.Name = "Adress";
+            this.Adress.Size = new System.Drawing.Size(365, 20);
+            this.Adress.TabIndex = 0;
+            this.Adress.Text = "Adress";
+            this.Adress.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // numericUpDown1
+            // port
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(430, 31);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(341, 20);
-            this.numericUpDown1.TabIndex = 1;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.port.Location = new System.Drawing.Point(430, 31);
+            this.port.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.port.Name = "port";
+            this.port.Size = new System.Drawing.Size(341, 20);
+            this.port.TabIndex = 1;
+            this.port.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // button1
+            // Connect
             // 
-            this.button1.Location = new System.Drawing.Point(221, 436);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(370, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Connect.Location = new System.Drawing.Point(221, 436);
+            this.Connect.Name = "Connect";
+            this.Connect.Size = new System.Drawing.Size(370, 23);
+            this.Connect.TabIndex = 3;
+            this.Connect.Text = "Connect";
+            this.Connect.UseVisualStyleBackColor = true;
+            this.Connect.Click += new System.EventHandler(this.Connect_Click);
             // 
-            // listBox1
+            // info_feed
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(28, 71);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(743, 342);
-            this.listBox1.TabIndex = 4;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.info_feed.FormattingEnabled = true;
+            this.info_feed.Location = new System.Drawing.Point(28, 71);
+            this.info_feed.Name = "info_feed";
+            this.info_feed.Size = new System.Drawing.Size(743, 342);
+            this.info_feed.TabIndex = 4;
+            this.info_feed.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -75,13 +82,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 483);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.info_feed);
+            this.Controls.Add(this.Connect);
+            this.Controls.Add(this.port);
+            this.Controls.Add(this.Adress);
             this.Name = "Form1";
             this.Text = "Tcp Klient";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.port)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,10 +96,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox Adress;
+        private System.Windows.Forms.NumericUpDown port;
+        private System.Windows.Forms.Button Connect;
+        private System.Windows.Forms.ListBox info_feed;
     }
 }
 
